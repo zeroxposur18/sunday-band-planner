@@ -4,7 +4,8 @@ module.exports = {
     index,
     new: newBand,
     create,
-    member
+    member,
+    show
 };
 
 function index(req, res) {
@@ -20,7 +21,10 @@ function member(req, res) {
 function newBand(req, res) {
     res.render('bands/new', {user: req.user})
 };
-
+function show(req, res) {
+    Band.findById(req.params.id, function(err, bands){
+    res.render('bands/show', {name: 'Name Detail', bands, user: req.user})
+})};
 
 function create(req, res) {
     // convert nowShowing's checkbox of nothing or "on" to boolean

@@ -12,6 +12,7 @@
         <% bands.forEach(function(b){%>
             <tr>
                 <td><%=b.name %> </td>
+                <td><a href="/bands/<%=b._id%>">Details</a></td>
             </tr>
        <% }); %>
     </tbody>

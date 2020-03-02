@@ -5,6 +5,7 @@ var bandsCtrl = require('../controllers/bands');
 /* GET users listing. */
 router.get('/', bandsCtrl.index);
 router.get('/member', isLoggedIn, bandsCtrl.member)
+router.get('/:id', bandsCtrl.show)
 router.get('/new', isLoggedIn, bandsCtrl.new)
 router.post('/', bandsCtrl.create);
 
