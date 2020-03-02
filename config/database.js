@@ -1,11 +1,10 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/bands', {
-    useNewUrlParser: true, useCreateIndex: true
+console.log(process.env.DATABASE_URL)
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 
-var db = mongoose.connection;
 
-db.on('connected', function() {
-    console.log('Connected to mongo!')
-});

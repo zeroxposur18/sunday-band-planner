@@ -5,7 +5,8 @@ module.exports = {
     new: newBand,
     create,
     member,
-    show
+    show,
+    delete: deleteOne
 };
 
 function index(req, res) {
@@ -35,6 +36,8 @@ function create(req, res) {
     band.save(function(err) {
       if (err) return res.redirect('/bands/new');
       // res.redirect('/movies');
-      res.redirect(`/bands/member`);
+      res.redirect(`/bands/member`, {user: req.user});
     })};
-    
+    function deleteOne(req, res) {
+
+    }
