@@ -13,6 +13,9 @@
             <tr>
                 <td><%=b.name %> </td>
                 <td><a href="/bands/<%=b._id%>">Details</a></td>
+                <td><form action="/bands/<%=b._id%>?_method=DELETE" method="POST">
+                <button type="submit" id="deletebtn">X</button></td>
+                </form>
             </tr>
        <% }); %>
     </tbody>

@@ -38,5 +38,7 @@ function create(req, res) {
     })};
 
     function deleteOne(req, res) {
-
+        Band.findByIdAndDelete(req.params.id, function(err, band){
+            res.redirect('/bands/member');
+        });
     }
