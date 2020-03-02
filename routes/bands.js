@@ -5,8 +5,8 @@ var bandsCtrl = require('../controllers/bands');
 /* GET users listing. */
 router.get('/', bandsCtrl.index);
 router.get('/member', isLoggedIn, bandsCtrl.member)
-router.get('/:id',isLoggedIn, bandsCtrl.show)
 router.get('/new', isLoggedIn, bandsCtrl.new)
+router.get('/:id',isLoggedIn, bandsCtrl.show)
 router.post('/', isLoggedIn, bandsCtrl.create);
 router.delete('/:id',isLoggedIn, bandsCtrl.delete);
 

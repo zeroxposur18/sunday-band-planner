@@ -28,16 +28,15 @@ function show(req, res) {
 })};
 
 function create(req, res) {
-    // convert nowShowing's checkbox of nothing or "on" to boolean
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
     }
     var band = new Band(req.body);
     band.save(function(err) {
       if (err) return res.redirect('/bands/new');
-      // res.redirect('/movies');
-      res.redirect(`/bands/member`, {user: req.user});
+      res.redirect('/bands/member');
     })};
+
     function deleteOne(req, res) {
 
     }
