@@ -8,4 +8,13 @@
             <th></th>
         </tr>
     </thead>
+    <tbody>
+        <% bands.forEach(function(b){%>
+            <tr>
+                <td><%=b.name %> </td>
+            </tr>
+       <% }); %>
+    </tbody>
 </table>
+
+<a href="/bands/new">Add Member</a>

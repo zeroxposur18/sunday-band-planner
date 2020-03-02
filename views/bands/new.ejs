@@ -1,1 +1,16 @@
+<%- include('../partials/header') %>
 <h1>new</h1>
+<form id="new-form" action="/bands" method="POST">
+<label>Name:</label>
+<input type="text" name="name">
+<!-- <label>Music Skill:</label>
+<select name="abiliy">
+<option value="Voice">Voice</option>
+<option value="Guitar">Guitar</option>
+<option value="Piano">Piano</option>
+<option value="Bass">Bass</option>
+<option value="Drum-kit">Drum-kit</option>
+</select> -->
+<br>
+<input type="submit" value="Add Member">
+</form>

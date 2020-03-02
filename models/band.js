@@ -24,3 +24,5 @@ var bandSchema = new Schema({
     timestamps: true
 }
 );
+
+module.exports = mongoose.model('band' ,bandSchema)

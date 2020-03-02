@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/band', {
+mongoose.connect('mongodb://localhost/bands', {
     useNewUrlParser: true, useCreateIndex: true
 });
 
-var db = mongoose/RTCPeerConnection;
+var db = mongoose.connection;
 
-db.on('conneted', function() {
+db.on('connected', function() {
     console.log('Connected to mongo!')
 });
