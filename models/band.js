@@ -1,11 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var abilitySchema = new Schema({
-    ability: []
-}, {
-    timestamps: true
-});
+
 
 var bandSchema = new Schema({
     name: {
@@ -18,8 +14,9 @@ var bandSchema = new Schema({
             return new Date();
         }
     },
-    ability: [abilitySchema],
-    googleId: String,
+    role: {
+        type:String,
+    },
 }, {
     timestamps: true
 }
