@@ -1,5 +1,5 @@
 var Band = require('../models/band');
-var Skill = require('../models/skill');
+
 module.exports = {
     index,
     new: newBand,
@@ -26,15 +26,12 @@ function newBand(req, res) {
 };
 function show(req, res) {
     Band.findById(req.params.id, function(err, band){
-    Skill.find({_id: {$nin: band.musicskill}})
-    .exec(function(err, skills) {
-        res.render('bands/show', {
-            band, skills, user: req.user
-        });
-    });
-})};
+        res.render('bands/show', {band, user: req.user})
+    })};
 
 function create(req, res) {
+    req.body.musicskill = req.body.musicskill.replace(/\s*,\s*/g, ',');
+    if (req.body.musicskill) req.body.musicskill = req.body.musicskill.split(',');
     req.body.playing = false;
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
@@ -57,7 +54,8 @@ function create(req, res) {
         })
     };
     function update(req, res) {
-        console.log(req.body);
+        req.body.musicskill = req.body.musicskill.replace(/\s*,\s*/g, ',');
+        if (req.body.musicskill) req.body.musicskill = req.body.musicskill.split(',');        
         Band.findByIdAndUpdate(req.params.id, {
             name:req.body.name,
             role:req.body.role,

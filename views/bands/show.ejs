@@ -8,5 +8,6 @@
     <div><h4>Playing: </h4></div>
     <div><h6><%=band.playing ? 'Yes' : 'No'%></h6></div><br>
     <div><h4>Music Abilities: </h4></div>
+    <%= band.musicskill.map(i => i).join(', ') %>
 
   </section>
