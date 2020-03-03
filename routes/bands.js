@@ -9,7 +9,8 @@ router.get('/new', isLoggedIn, bandsCtrl.new)
 router.get('/:id',isLoggedIn, bandsCtrl.show)
 router.post('/', isLoggedIn, bandsCtrl.create);
 router.delete('/:id',isLoggedIn, bandsCtrl.delete);
-router.put('/member/:id/edit', isLoggedIn, bandsCtrl.update);
+router.get('/edit/:id', isLoggedIn, bandsCtrl.showUpdate);
+router.put('/edit/:id', isLoggedIn, bandsCtrl.update);
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) return next();

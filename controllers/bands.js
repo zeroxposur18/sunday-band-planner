@@ -7,6 +7,7 @@ module.exports = {
     member,
     show,
     delete: deleteOne,
+    showUpdate,
     update
 };
 
@@ -28,7 +29,7 @@ function show(req, res) {
     Skill.find({_id: {$nin: band.musicskill}})
     .exec(function(err, skills) {
         res.render('bands/show', {
-            title: 'Member Detail', band, skills, user: req.user
+            band, skills, user: req.user
         });
     });
 })};
@@ -48,7 +49,24 @@ function create(req, res) {
             res.redirect('/bands/member');
         });
     }
+    function showUpdate(req, res) {
+        Band.findById(req.params.id, function(err, band) {
+            console.log(band);
+            res.render('bands/edit', {band, user: req.user})
+        })
+    };
     function update(req, res) {
-        Band.update(req.params.id, req.body);
-        res.redirect('bands/member', {user: req.user});
-    }
+        console.log(req.body);
+        Band.findByIdAndUpdate(req.params.id, {
+            name:req.body.name,
+            role:req.body.role,
+            musicskill: req.body.skill
+        },
+        {new:true},
+        function(err, response) {
+            if (err) {
+                console.log(err);
+            }
+             else res.redirect('/bands/member')
+        }
+        )};
