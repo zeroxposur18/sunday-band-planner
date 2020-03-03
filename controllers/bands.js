@@ -35,6 +35,7 @@ function show(req, res) {
 })};
 
 function create(req, res) {
+    req.body.playing = false;
     for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
     }
@@ -60,7 +61,8 @@ function create(req, res) {
         Band.findByIdAndUpdate(req.params.id, {
             name:req.body.name,
             role:req.body.role,
-            musicskill: req.body.skill
+            musicskill: req.body.skill,
+            playing: req.body.playing
         },
         {new:true},
         function(err, response) {

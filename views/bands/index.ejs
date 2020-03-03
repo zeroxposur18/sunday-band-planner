@@ -15,4 +15,14 @@
             <th></th>
         </tr>
     </thead>
+    <tbody>
+        <% bands.forEach(function(b){%>
+            <tr>
+                <% if (b.playing === true) {%> 
+                <td><%=b.name %> </td>
+                <td><%=b.role%></td>
+                <% } %> 
+            </tr>
+       <% }); %>
+    </tbody>
 </table>

@@ -3,7 +3,6 @@
 <form action="/bands/edit/<%= band._id%>?_method=PUT" method="POST">
     <label>Name:</label>
     <input type="text" name="name" value="<%=band.name%>">
-    <label>Role:</label>
     <label>Role:
         <select name="role" class="browser-default">
             <option selected><%=band.role%></option>
@@ -16,5 +15,15 @@
         </select>
     </label>
     <br>
+    <label>Playing?     
+        <select name="playing" class="browser-default">
+            <% if (band.playing === true) { %> 
+                <option selected>Playing</option>
+                <%} else {%>
+                <option selected>Not playing</option>
+            <% } %> 
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+    </label>
 <input type="submit" value="Update">
 </form>

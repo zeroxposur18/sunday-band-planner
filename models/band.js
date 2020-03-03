@@ -17,7 +17,10 @@ var bandSchema = new Schema({
     role: {
         type:String, enum:['Singer', 'Guitarist', 'Violinist', 'Pianist', 'Bassist', 'Drummer']
     },
-    musicskill: [{type: Schema.Types.ObjectId, ref: 'Skill'}]
+    playing: {
+        type: Boolean
+    },
+    musicskill: []
 }, {
     timestamps: true
 }

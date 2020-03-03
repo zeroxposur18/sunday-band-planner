@@ -5,6 +5,8 @@
         <tr>
             <th>Member Name</th>
             <th>Role</th>
+            <th>Playing?</th>
+            <th>Member Info</th>
             <th></th>
         </tr>
     </thead>
@@ -13,6 +15,7 @@
             <tr>
                 <td><%=b.name %> </td>
                 <td><%=b.role%></td>
+                <td><%=b.playing ? 'On this week!' : 'Not Playing'%></td>
                 <td><a href="/bands/<%=b._id%>">Details</a></td>
                 <td><form action="/bands/<%=b._id%>?_method=DELETE" method="POST">
                 <button type="submit" id="deletebtn">X</button></td>
