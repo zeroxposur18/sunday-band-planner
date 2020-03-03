@@ -15,8 +15,9 @@ var bandSchema = new Schema({
         }
     },
     role: {
-        type:String,
+        type:String
     },
+    musicskill: [{type: Schema.Types.ObjectId, ref: 'Skill'}]
 }, {
     timestamps: true
 }

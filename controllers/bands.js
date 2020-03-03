@@ -1,5 +1,5 @@
 var Band = require('../models/band');
-
+var Skill = require('../models/skill');
 module.exports = {
     index,
     new: newBand,
@@ -23,8 +23,13 @@ function newBand(req, res) {
     res.render('bands/new', {user: req.user})
 };
 function show(req, res) {
-    Band.findById(req.params.id, function(err, bands){
-    res.render('bands/show', {name: 'Name Detail', bands, user: req.user})
+    Band.findById(req.params.id, function(err, band){
+    Skill.find({_id: {$nin: band.musicskill}})
+    .exec(function(err, performers) {
+        res.render('bands/show', {
+            title: 'Member Detail', band, skills, user: req.user
+        });
+    });
 })};
 
 function create(req, res) {
