@@ -16,7 +16,7 @@ function(acessTOken, refreshToken, profile, cb){
             var newBand = new Band({
                 name: profile.displayName,
                 email: profile.emails[0].value,
-                googleId: profile.id
+                googleId: profile.id,
             });
             newBand.save(function(err) {
                 if (err) return cb(err);

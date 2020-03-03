@@ -53,13 +53,11 @@ function create(req, res) {
             res.render('bands/edit', {band, user: req.user})
         })
     };
-    function update(req, res) {
-        req.body.musicskill = req.body.musicskill.replace(/\s*,\s*/g, ',');
-        if (req.body.musicskill) req.body.musicskill = req.body.musicskill.split(',');        
+    function update(req, res) {       
         Band.findByIdAndUpdate(req.params.id, {
             name:req.body.name,
             role:req.body.role,
-            musicskill: req.body.skill,
+            musicskill: req.body.musicskill,
             playing: req.body.playing
         },
         {new:true},

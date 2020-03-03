@@ -17,16 +17,11 @@
     <br>
     <label>Playing?     
         <select name="playing" class="browser-default">
-            <% if (band.playing === true) { %> 
-                <option selected>Playing</option>
-                <%} else {%>
-                <option selected>Not playing</option>
-            <% } %> 
+            <option selected><%=band.playing%></option>
             <option value="true">Yes</option>
             <option value="false">No</option>
     </label>
-    <br><br>
-    <label>Musical Abilities</label>
-    <input type="text" name="musicskill" value="<%= band.musicskill.map(i => i).join(', ') %>">
-<input type="submit" value="Update">
+    <label>Musical Abilities: </label>    
+        <input type="text" name="musicskill" value="<%= band.musicskill.map(i => i).join(', ') %>">
+    <input type="submit" value="Update">
 </form>

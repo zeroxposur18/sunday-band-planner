@@ -15,12 +15,19 @@ var bandSchema = new Schema({
         }
     },
     role: {
-        type:String, enum:['Singer', 'Guitarist', 'Violinist', 'Pianist', 'Bassist', 'Drummer']
+        type:String, 
+        default: 'Singer',
+        enum:['Singer', 'Guitarist', 'Violinist', 'Pianist', 'Bassist', 'Drummer']
     },
     playing: {
-        type: Boolean
+        type: Boolean,
+        default: false
     },
-    musicskill: []
+    musicskill: {
+        type: Array,
+        required: true,
+        default: []
+    }
 }, {
     timestamps: true
 }
