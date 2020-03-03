@@ -4,7 +4,17 @@
     <label>Name:</label>
     <input type="text" name="name" value="<%=band.name%>">
     <label>Role:</label>
-    <input type="text" name="role" value="<%=band.role%>">
+    <label>Role:
+        <select name="role" class="browser-default">
+            <option selected><%=band.role%></option>
+            <option value="Singer">Voice</option>
+            <option value="Violinist">Violin</option>
+            <option value="Guitarist">Guitar</option>
+            <option value="Pianist">Piano</option>
+            <option value="Bassist">Bass</option>
+            <option value="Drummer">Drum-kit</option>
+        </select>
+    </label>
     <br>
 <input type="submit" value="Update">
 </form>
