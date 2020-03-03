@@ -25,7 +25,7 @@ function newBand(req, res) {
 function show(req, res) {
     Band.findById(req.params.id, function(err, band){
     Skill.find({_id: {$nin: band.musicskill}})
-    .exec(function(err, performers) {
+    .exec(function(err, skills) {
         res.render('bands/show', {
             title: 'Member Detail', band, skills, user: req.user
         });
