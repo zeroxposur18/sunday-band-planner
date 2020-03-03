@@ -6,7 +6,8 @@ module.exports = {
     create,
     member,
     show,
-    delete: deleteOne
+    delete: deleteOne,
+    update
 };
 
 function index(req, res) {
@@ -46,4 +47,8 @@ function create(req, res) {
         Band.findByIdAndDelete(req.params.id, function(err, band){
             res.redirect('/bands/member');
         });
+    }
+    function update(req, res) {
+        Band.update(req.params.id, req.body);
+        res.redirect('bands/member', {user: req.user});
     }
