@@ -7,6 +7,8 @@
     <div><h6><%= band.role %></h6></div><br>
     <div><h4>Playing: </h4></div>
     <div><h6><%=band.playing ? 'Yes' : 'No'%></h6></div><br>
+    <div><h4>Date Joined: </h4></div>
+    <div><h6><%=band.joined.toDateString()%></h6></div><br>
     <div><h4>Music Abilities: </h4></div>
     <%= band.musicskill.map(i => i).join(', ') %>
 
