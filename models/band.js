@@ -1,6 +1,12 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+
+var commentSchema = new Schema({
+    reviewComment: String
+}, {timestamps: true}
+);
+
 var reviewSchema = new Schema ({
     content: String,
     rating: {
@@ -8,7 +14,9 @@ var reviewSchema = new Schema ({
         min: 1,
         max: 5,
         default: 5
-    }},   {
+    },
+    comment: [commentSchema]
+},   {
         timestamps: true
     }
 );

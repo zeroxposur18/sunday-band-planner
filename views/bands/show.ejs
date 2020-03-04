@@ -25,7 +25,7 @@
   </select>
   <input type="submit" value="Add Review">
   </form>
-
+<br><br>
   <% if (band.reviews.length) { %>
     <table>
       <thead>
@@ -44,6 +44,12 @@
             <td><%= r.content %></td>
             <td><%= r.rating %></td>
           </tr>
+          <th>Comments
+            <form id="add-comment-form" method="POST" action="/bands/<%=band._id%>/reviews/<%=r._id%>/comments">
+              <input type="text" name="reviewComment">  
+              <input type="submit" value="Add Comment"> 
+              </form>      
+            </th>
           <% }); %>
           <tr>
             <td colspan="2"></td>
@@ -52,5 +58,5 @@
       </tbody>
     </table>
   <% } else { %>
-    <h4>No Reviews Yet</h4>
+    <h4>No Reviews Yet!</h4>
   <%}%>
