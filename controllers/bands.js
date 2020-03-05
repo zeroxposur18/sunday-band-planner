@@ -37,22 +37,30 @@ function create(req, res) {
       if (req.body[key] === '') delete req.body[key];
     }
     var band = new Band(req.body);
+    band.googleId = req.user.googleId;
     band.save(function(err) {
       if (err) return res.redirect('/bands/new');
       res.redirect('/bands/member');
     })};
-
-    function deleteOne(req, res) {
-        Band.findByIdAndDelete(req.params.id, function(err, band){
-            res.redirect('/bands/member');
-        });
-    }
+    function deleteOne(req,res) {
+        Band.findById(req.params.id, function (err, band) {
+          if (band.googleId === req.user.googleId) {
+          Band.findByIdAndDelete(req.params.id, function(err, stay) {
+            res.redirect("/bands/member");
+            });
+          }
+          else {
+            res.redirect("/bands/member");
+          }
+        })
+      }
     function showUpdate(req, res) {
         Band.findById(req.params.id, function(err, band) {
-            console.log(band);
-            res.render('bands/edit', {band, user: req.user})
-        })
-    };
+            if (band.googleId == req.user.googleId) {
+                res.render('bands/edit', {band, user: req.user}) 
+        } else {
+            {res.redirect('/bands/member')} }
+    })};
     function update(req, res) {       
         Band.findByIdAndUpdate(req.params.id, {
             name:req.body.name,
