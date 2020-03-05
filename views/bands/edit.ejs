@@ -1,5 +1,6 @@
 <%- include('../partials/header')  %> 
-<h1>edit</h1>
+<link rel="stylesheet" href="stylesheets/style.css" />
+<h1>Edit Page</h1>
 <form action="/bands/edit/<%= band._id%>?_method=PUT" method="POST">
     <label>Name:</label>
     <input type="text" name="name" value="<%=band.name%>">
@@ -20,8 +21,10 @@
             <option selected><%=band.playing%></option>
             <option value="true">Yes</option>
             <option value="false">No</option>
+            </select>
     </label>
-    <label>Musical Abilities: </label>    
+    <br>
+    <label>Musical Abilities:</label> 
         <input type="text" name="musicskill" value="<%= band.musicskill.map(i => i).join(', ') %>">
-    <input type="submit" value="Update">
+        <input type="submit" class="btn waves-effect waves-light deep-purple darken-1" value="Update">   
 </form>

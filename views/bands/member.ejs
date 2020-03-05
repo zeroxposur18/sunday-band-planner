@@ -1,4 +1,5 @@
-<%- include('../partials/header')  %> 
+<%- include('../partials/header')  %>
+<link rel="stylesheet" href="stylesheets/style.css" />
 <h1>Members</h1>
 <table id="list">
     <thead>
@@ -17,13 +18,13 @@
                 <td><%=b.name %> </td>
                 <td><%=b.role%></td>
                 <td><%=b.playing ? 'On this week!' : 'Not Playing'%></td>
-                <td><a href="/bands/<%=b._id%>">Details</a></td>
+                <td><a href="/bands/<%=b._id%>" class="btn waves-effect waves-light btn-small deep-purple darken-1">Details</a></td>
                 <td><form action="/bands/<%=b._id%>?_method=DELETE" method="POST">
-                <button type="submit" id="delete">X</button></td>
+                <button type="submit" class="btn-floating waves-effect waves-light red">X</button></td>
                 </form>
             </tr>
        <% }); %>
     </tbody>
 </table>
 
-<a href="/bands/new">Add Member</a>
+<h6><a href="/bands/new" class="btn waves-effect waves-light deep-purple darken-1">Add Member</a></h6>

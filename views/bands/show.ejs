@@ -1,16 +1,17 @@
-<%- include('../partials/header')%>
-<h2><a href="/bands/edit/<%=band._id%>">Edit Member</a></h2>
+<link rel="stylesheet" href="stylesheets/style.css" />
+<%- include('../partials/header')  %>
 <section id="show">
-    <div><h4>Name: </h4></div>
-    <div><h6><%= band.name %></h6></div><br>
-    <div><h4>Role: </h4></div>
-    <div><h6><%= band.role %></h6></div><br>
-    <div><h4>Playing: </h4></div>
-    <div><h6><%=band.playing ? 'Yes' : 'No'%></h6></div><br>
-    <div><h4>Date Joined: </h4></div>
-    <div><h6><%=band.joined.toDateString()%></h6></div><br>
-    <div><h4>Music Abilities: </h4></div>
-    <%= band.musicskill.map(i => i).join(', ') %>
+  <div><h4>Name: </h4></div>
+  <div><h6><%= band.name %></h6></div><br>
+  <div><h4>Role: </h4></div>
+  <div><h6><%= band.role %></h6></div><br>
+  <div><h4>Playing: </h4></div>
+  <div><h6><%=band.playing ? 'Yes' : 'No'%></h6></div><br>
+  <div><h4>Date Joined: </h4></div>
+  <div><h6><%=band.joined.toDateString()%></h6></div><br>
+  <div><h4>Music Abilities: </h4></div>
+  <%= band.musicskill.map(i => i).join(', ') %>
+  <h2><a href="/bands/edit/<%=band._id%>" class="btn waves-effect waves-light deep-purple darken-1">Edit Member</a></h2>
   </section>
   <h4>Review of Member</h4>
   <form id="add-review-form" method="POST" action="/bands/<%=band._id%>/reviews">
@@ -23,7 +24,8 @@
     <option value="4">4</option>
     <option value="5">5</option>
   </select>
-  <input type="submit" value="Add Review">
+  <br>
+  <input type="submit" class="btn waves-effect waves-light deep-purple darken-1"value="Add Review">
   </form>
 <br><br>
   <% if (band.reviews.length) { %>
@@ -54,7 +56,7 @@
             <th>Comments
               <form id="add-comment-form" method="POST" action="/bands/<%=band._id%>/reviews/<%=r._id%>/comments">
                 <input type="text" name="reviewComment">  
-                <input type="submit" value="Add Comment"> 
+                <input type="submit" class="btn waves-effect waves-light deep-purple darken-1" value="Add Comment"> 
               </form> 
             </th>     
           
