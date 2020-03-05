@@ -4,7 +4,7 @@
 <h2>Objective:</h2>
 <p>Create an application with full CRUD functionality</p>
 <h2>Launch the application! </h2>
-<p><a target="_blank" rel="noopener noreferrer" href="https://sunday-band-planner.herokuapp.com/">Sunday-Band-Planner</a></p><br>
+<p><a target="_blank" rel="noopener noreferrer" href="https://sunday-band-planner.herokuapp.com/">Sunday-Band-Planner</a></p>
 <h2>Trello</h2>
 <p><a target="_blank" rel="noopener noreferrer" href="https://trello.com/b/kX6lgmwK/sunday-band-planner">My Workflow space</a></p>
 <h2>Prototype View:</h2>
