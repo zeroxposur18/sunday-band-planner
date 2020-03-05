@@ -31,4 +31,5 @@
 1. Add Delete and Edit functions to reviews and comments <br>
 2. Calendar function instead of displaying Sunday's date <br>
 3. Song Selection Function and Display <br>
-4. Song selection history and saved into database 
+4. Song selection history and saved into database <br>
+5. Admin privileges to certain users  
