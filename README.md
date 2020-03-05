@@ -6,12 +6,12 @@
 <h2>Launch the application! </h2>
 <p><a target="_blank" rel="noopener noreferrer" href="https://sunday-band-planner.herokuapp.com/">Sunday-Band-Planner</p>
 <h2>Prototype View:</h2>
-<img src="img/sunday-band-planner-wireframe.png">
+<img src="img/sunday-band-planner-wireframe.png"><br>
 <h2>Screenshots</h2>
-<img src="img/SSone.png">
-<img src="img/SStwo.png">
-<img src="img/SSthree.png">
-<img src="img/SSfour.png">
+<img src="img/SSone.png"> <br>
+<img src="img/SStwo.png"><br>
+<img src="img/SSthree.png"><br>
+<img src="img/SSfour.png"><br>
 <h2>Technologies Used</h2>
 <p>This program was built with: </p> 
 - JavaScript <br>
